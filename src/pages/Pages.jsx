@@ -74,7 +74,7 @@ export function HomePage() {
           <p className="hero-intro">I’m Mohammed Nasib K N, a Software Developer at Blaze Technology Solutions in Doha, Qatar. My previous DCF work covered insurance workflows, and my technical experience spans .NET, React, APIs, portals, and management tools.</p>
           <div className="hero-actions">
             <Link className="button button-primary" to="/experience">Explore experience <span aria-hidden="true">↗</span></Link>
-            <Link className="text-link" to="/skills">Technical skills <span aria-hidden="true">↗</span></Link>
+            <Link className="text-link" to="/contact">Get in touch <span aria-hidden="true">↗</span></Link>
           </div>
           <p className="hero-note">Current role <span aria-hidden="true">/</span> Software Developer at Blaze Technology Solutions</p>
         </div>
@@ -97,6 +97,52 @@ export function HomePage() {
         <div className="proof-item"><span className="proof-label">CURRENT</span><span>Blaze Technology Solutions</span></div>
         <div className="proof-item"><span className="proof-label">BASED IN</span><span>Doha, Qatar</span></div>
         <div className="proof-item"><span className="proof-label">WORKS ACROSS</span><span>.NET · React · PostgreSQL</span></div>
+      </section>
+
+      <section className="selected-work section-shell" aria-labelledby="selected-work-title">
+        <div className="selected-work-heading">
+          <div>
+            <p className="eyebrow">SELECTED WORK · SYSTEMS & APPLICATIONS</p>
+            <h2 id="selected-work-title">Work across real workflows<span className="heading-period">.</span></h2>
+          </div>
+          <p>A scan-friendly view of insurance systems from my previous DCF work, alongside identity, CMS, and integration capabilities from my technical background.</p>
+        </div>
+        <div className="case-study-list">
+          <article className="case-study case-study-featured">
+            <div className="case-study-meta">
+              <span className="case-study-number">01</span>
+              <span className="case-study-category">OPERATIONS & PORTALS</span>
+              <span className="case-study-context">PREVIOUS DCF WORK</span>
+            </div>
+            <div className="case-study-content">
+              <h3>Insurance operations & portals</h3>
+              <p>Management workflows covered policies, plans, agreements, providers, schemes, and members, alongside provider, member, and broker portal management.</p>
+              <Link className="inline-route-link" to="/insurance">Explore insurance work <span aria-hidden="true">↗</span></Link>
+            </div>
+          </article>
+          <article className="case-study case-study-identity">
+            <div className="case-study-meta">
+              <span className="case-study-number">02</span>
+              <span className="case-study-category">IDENTITY & ACCESS</span>
+            </div>
+            <div className="case-study-content">
+              <h3>Identity & user management</h3>
+              <p>User, tenant, application, menu, profile, and role administration, with JWT-based authentication and authorization plus Google and Microsoft sign-in.</p>
+              <Link className="inline-route-link" to="/skills">View technical skills <span aria-hidden="true">↗</span></Link>
+            </div>
+          </article>
+          <article className="case-study case-study-platform">
+            <div className="case-study-meta">
+              <span className="case-study-number">03</span>
+              <span className="case-study-category">CMS, INTEGRATIONS & UI</span>
+            </div>
+            <div className="case-study-content">
+              <h3>Configurable pages & reusable UI</h3>
+              <p>A CMS for creating, customizing, and reviewing customer-portal pages; Zoho REST API OAuth integration and MinIO file storage; reusable React select, accordion, stepper, modal, and toast components with Redux cache integration.</p>
+              <Link className="inline-route-link" to="/contact">Discuss relevant experience <span aria-hidden="true">↗</span></Link>
+            </div>
+          </article>
+        </div>
       </section>
 
       <section className="home-overview section-shell" aria-labelledby="overview-title">
