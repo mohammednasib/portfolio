@@ -1,6 +1,17 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
 
+const themeStorageKey = "mohammed-nasib-theme";
+
+function getInitialTheme() {
+  try {
+    const savedTheme = window.localStorage.getItem(themeStorageKey);
+    return savedTheme === "dark" || savedTheme === "light" ? savedTheme : "light";
+  } catch {
+    return document.documentElement.dataset.theme === "dark" ? "dark" : "light";
+  }
+}
+
 const navigation = [
   ["Home", "/"],
   ["Experience", "/experience"],
@@ -12,8 +23,23 @@ const navigation = [
 
 function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [theme, setTheme] = useState(getInitialTheme);
   const menuButton = useRef(null);
   const location = useLocation();
+
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme;
+    document.documentElement.style.colorScheme = theme;
+    document.querySelector('meta[name="theme-color"]')?.setAttribute(
+      "content",
+      theme === "dark" ? "#101a28" : "#f5f7fa",
+    );
+    try {
+      window.localStorage.setItem(themeStorageKey, theme);
+    } catch {
+      // Theme changes still apply for this page when storage is unavailable.
+    }
+  }, [theme]);
 
   useEffect(() => {
     setMenuOpen(false);
@@ -28,7 +54,7 @@ function SiteHeader() {
     }
 
     function handleResize() {
-      if (window.innerWidth > 760) setMenuOpen(false);
+      if (window.innerWidth > 980) setMenuOpen(false);
     }
 
     document.addEventListener("keydown", handleKeyDown);
@@ -79,6 +105,16 @@ function SiteHeader() {
         >
           Let’s talk <span aria-hidden="true">↗</span>
         </NavLink>
+        <button
+          className="theme-toggle"
+          type="button"
+          aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
+          aria-pressed={theme === "dark"}
+          onClick={() => setTheme((currentTheme) => currentTheme === "light" ? "dark" : "light")}
+        >
+          <span className="theme-toggle-icon" aria-hidden="true">{theme === "light" ? "☾" : "☼"}</span>
+          <span>{theme === "light" ? "Dark" : "Light"} mode</span>
+        </button>
       </nav>
     </header>
   );
