@@ -8,6 +8,7 @@ import {
   HomePage,
   InsurancePage,
   NotFoundPage,
+  ResumePage,
   SkillsPage,
 } from "./pages/Pages.jsx";
 
@@ -32,6 +33,7 @@ export default function App() {
           <Route path="/skills" element={<SkillsPage />} />
           <Route path="/insurance" element={<InsurancePage />} />
           <Route path="/erpnext" element={<ErpNextPage />} />
+          <Route path="/resume" element={<ResumePage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/404" element={<NotFoundPage />} />
           <Route path="*" element={<Navigate to="/404" replace />} />

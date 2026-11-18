@@ -18,6 +18,7 @@ const navigation = [
   ["Skills", "/skills"],
   ["Insurance", "/insurance"],
   ["ERPNext", "/erpnext"],
+  ["Resume", "/resume"],
   ["Contact", "/contact"],
 ];
 

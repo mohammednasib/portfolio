@@ -7,14 +7,20 @@ const pageDescriptions = {
   skills: "Mohammed Nasib K N’s software development skills across .NET, React, APIs, data, identity, integrations, and delivery tools.",
   insurance: "Insurance management workflows, portals, CMS, identity, and integrations from Mohammed Nasib K N’s previous DCF work.",
   erpnext: "Mohammed Nasib K N’s emerging Frappe and ERPNext career direction, including familiarity with DocTypes and workflows.",
+  resume: "Resume for Mohammed Nasib K N, Software Developer at Blaze Technology Solutions in Doha, Qatar, with previous insurance systems experience at DCF.",
   contact: "Contact Mohammed Nasib K N in Doha, Qatar about software development and Frappe or ERPNext opportunities.",
   notFound: "The requested page could not be found. Browse Mohammed Nasib K N’s portfolio.",
 };
 
 function usePageMeta(title, description) {
   useEffect(() => {
-    document.title = `${title} — Mohammed Nasib K N`;
+    const fullTitle = `${title} — Mohammed Nasib K N`;
+    document.title = fullTitle;
     document.querySelector('meta[name="description"]')?.setAttribute("content", description);
+    document.querySelector('meta[property="og:title"]')?.setAttribute("content", fullTitle);
+    document.querySelector('meta[property="og:description"]')?.setAttribute("content", description);
+    document.querySelector('meta[name="twitter:title"]')?.setAttribute("content", fullTitle);
+    document.querySelector('meta[name="twitter:description"]')?.setAttribute("content", description);
   }, [title, description]);
 }
 
@@ -210,6 +216,103 @@ export function SkillsPage() {
         </div>
       </section>
     </>
+  );
+}
+
+export function ResumePage() {
+  usePageMeta("Resume", pageDescriptions.resume);
+  return (
+    <article className="resume-page section-shell" aria-labelledby="resume-name">
+      <div className="resume-toolbar">
+        <p className="eyebrow">PROFESSIONAL PROFILE · DOHA, QATAR</p>
+        <button className="button button-primary resume-print" type="button" onClick={() => window.print()}>
+          Print / Save as PDF <span aria-hidden="true">↗</span>
+        </button>
+      </div>
+
+      <header className="resume-header">
+        <div>
+          <h1 id="resume-name">Mohammed Nasib K N</h1>
+          <p className="resume-role">Software Developer</p>
+        </div>
+        <address className="resume-contact" aria-label="Contact details">
+          <span>Doha, Qatar</span>
+          <a href="mailto:mohammednasib124@gmail.com">mohammednasib124@gmail.com</a>
+          <a href="tel:+97450928929">+974 5092 8929</a>
+          <a href="https://github.com/mohammednasib">github.com/mohammednasib</a>
+          <a href="https://www.linkedin.com/in/mohammed-nasib-k-n">linkedin.com/in/mohammed-nasib-k-n</a>
+        </address>
+      </header>
+
+      <section className="resume-section" aria-labelledby="resume-summary">
+        <h2 id="resume-summary">Professional summary</h2>
+        <p>
+          Software Developer at Blaze Technology Solutions in Doha, Qatar, with previous DCF work in insurance systems. Technical experience spans .NET, React, APIs, portals, databases, authentication, and integrations.
+        </p>
+      </section>
+
+      <section className="resume-section" aria-labelledby="resume-skills">
+        <h2 id="resume-skills">Technical skills</h2>
+        <dl className="resume-skills">
+          <div>
+            <dt>Backend & architecture</dt>
+            <dd>.NET, ASP.NET APIs, C#, REST APIs, dependency injection, SOLID principles, DTOs, models, validation, mappers, controllers, services and interfaces, EF Core, DbContext, migrations, Repository and Unit of Work.</dd>
+          </div>
+          <div>
+            <dt>Frontend</dt>
+            <dd>React, Redux state and cache integration, Progressive Web Applications (PWAs), reusable select dropdowns, accordions, steppers, modals, and toast notifications.</dd>
+          </div>
+          <div>
+            <dt>Data</dt>
+            <dd>PostgreSQL, MySQL, SQL querying, and DDL scripts for creating, updating, and modifying tables.</dd>
+          </div>
+          <div>
+            <dt>Identity & integrations</dt>
+            <dd>JWT authentication and authorization, Google and Microsoft sign-in, Zoho REST API with OAuth, and MinIO object and file storage.</dd>
+          </div>
+          <div>
+            <dt>Tools</dt>
+            <dd>Git, Insomnia for API testing, and PuTTY for UAT deployment.</dd>
+          </div>
+        </dl>
+      </section>
+
+      <section className="resume-section" aria-labelledby="resume-experience">
+        <h2 id="resume-experience">Experience</h2>
+        <div className="resume-experience-list">
+          <article className="resume-entry">
+            <div className="resume-entry-heading">
+              <div>
+                <h3>Software Developer</h3>
+                <p className="resume-employer">Blaze Technology Solutions</p>
+              </div>
+              <p className="resume-entry-meta">Current · Doha, Qatar</p>
+            </div>
+          </article>
+          <article className="resume-entry">
+            <div className="resume-entry-heading">
+              <div>
+                <h3>Insurance systems</h3>
+                <p className="resume-employer">DCF</p>
+              </div>
+              <p className="resume-entry-meta">December 2025 – November 2026</p>
+            </div>
+            <ul>
+              <li>Worked across insurance management workflows for policies, plans, agreements, providers, schemes, and members.</li>
+              <li>Covered provider, member, and broker portal management, and backend work for a customer portal.</li>
+              <li>Worked on an admin CMS for creating, customizing, and reviewing pages.</li>
+              <li>Experience included JWT-based authentication and authorization, Google and Microsoft sign-in, Zoho REST API OAuth integration, and MinIO storage.</li>
+              <li>Worked with user, tenant, application, menu, profile, and role administration features.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section className="resume-section resume-learning" aria-labelledby="resume-learning-title">
+        <h2 id="resume-learning-title">Learning direction</h2>
+        <p><strong>Frappe / ERPNext:</strong> Learning direction; familiar with DocTypes and workflows. This is not professional ERPNext implementation experience.</p>
+      </section>
+    </article>
   );
 }
 
