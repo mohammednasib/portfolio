@@ -75,9 +75,9 @@ export function HomePage() {
     <>
       <section className="hero section-shell" aria-labelledby="hero-title">
         <div className="hero-copy">
-          <p className="eyebrow"><span className="availability-dot" aria-hidden="true" /> SOFTWARE DEVELOPER · DOHA, QATAR</p>
-          <h1 id="hero-title">Building software<br /><span>for real workflows.</span></h1>
-          <p className="hero-intro">I’m Mohammed Nasib K N, a Software Developer at Blaze Technology Solutions in Doha, Qatar. My previous DCF work covered insurance workflows, and my technical experience spans .NET, React, APIs, portals, and management tools.</p>
+          <p className="eyebrow"><span className="availability-dot" aria-hidden="true" /> FULL-STACK DEVELOPER · DOHA, QATAR</p>
+          <h1 id="hero-title">Full-stack thinking.<br /><span>Built for real workflows.</span></h1>
+          <p className="hero-intro">I’m Mohammed Nasib K N, a Software Developer at Blaze Technology Solutions in Doha, Qatar. Previously at DCF, I worked across insurance systems, portals, APIs, and management workflows.</p>
           <div className="hero-actions">
             <Link className="button button-primary" to="/experience">Explore experience <span aria-hidden="true">↗</span></Link>
             <Link className="text-link" to="/contact">Get in touch <span aria-hidden="true">↗</span></Link>
@@ -90,9 +90,9 @@ export function HomePage() {
           <span className="portrait-cross portrait-cross-one" aria-hidden="true">+</span>
           <span className="portrait-cross portrait-cross-two" aria-hidden="true">+</span>
           <div className="portrait-frame">
-            <img src="/assets/mohammed-nasib.png" alt="Portrait of Mohammed Nasib K N" width="768" height="768" />
+            <img src="/assets/mohammed-nasib.png" alt="Portrait of Mohammed Nasib K N" width="768" height="768" loading="eager" fetchpriority="high" decoding="async" />
           </div>
-          <figcaption className="portrait-caption"><span>MOHAMMED NASIB K N</span><span>SOFTWARE DEVELOPER</span></figcaption>
+          <figcaption className="portrait-caption"><span>MOHAMMED NASIB K N</span><span>FULL-STACK DEVELOPER</span></figcaption>
           <span className="portrait-index" aria-hidden="true">01 / DOHA</span>
         </figure>
         <Link className="scroll-cue" to="/experience"><span className="scroll-cue-line" aria-hidden="true" /> EXPLORE EXPERIENCE</Link>
@@ -105,7 +105,36 @@ export function HomePage() {
         <div className="proof-item"><span className="proof-label">WORKS ACROSS</span><span>.NET · React · PostgreSQL</span></div>
       </section>
 
-      <section className="selected-work section-shell" aria-labelledby="selected-work-title">
+      <section className="services-section section-shell reveal" aria-labelledby="services-title">
+        <div className="services-heading">
+          <p className="eyebrow">WHAT I WORK ON</p>
+          <h2 id="services-title">From application layers to day-to-day operations<span className="heading-period">.</span></h2>
+        </div>
+        <div className="services-grid">
+          <article className="service-item">
+            <span className="service-index">01</span>
+            <h3>Backend & APIs</h3>
+            <p>.NET and ASP.NET REST APIs, application architecture, dependency injection, EF Core, migrations, validation, and structured service layers.</p>
+          </article>
+          <article className="service-item">
+            <span className="service-index">02</span>
+            <h3>Frontend applications</h3>
+            <p>React interfaces, reusable components, Redux state and cache integration, Progressive Web Apps, and portal experiences.</p>
+          </article>
+          <article className="service-item">
+            <span className="service-index">03</span>
+            <h3>Data & integrations</h3>
+            <p>PostgreSQL and MySQL, SQL and DDL work, JWT identity, Google and Microsoft sign-in, OAuth APIs, and MinIO storage.</p>
+          </article>
+          <article className="service-item">
+            <span className="service-index">04</span>
+            <h3>Operational systems</h3>
+            <p>Insurance workflows, management dashboards, portals, configurable CMS experiences, and user, tenant, menu, profile, and role administration.</p>
+          </article>
+        </div>
+      </section>
+
+      <section className="selected-work section-shell reveal" aria-labelledby="selected-work-title">
         <div className="selected-work-heading">
           <div>
             <p className="eyebrow">SELECTED WORK · SYSTEMS & APPLICATIONS</p>

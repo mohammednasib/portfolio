@@ -47,6 +47,15 @@ function SiteHeader() {
   }, [location.pathname]);
 
   useEffect(() => {
+    if (!menuOpen) return undefined;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [menuOpen]);
+
+  useEffect(() => {
     function handleKeyDown(event) {
       if (event.key === "Escape" && menuOpen) {
         setMenuOpen(false);
@@ -78,6 +87,7 @@ function SiteHeader() {
         type="button"
         aria-expanded={menuOpen}
         aria-controls="primary-navigation"
+        aria-label={menuOpen ? "Close primary navigation" : "Open primary navigation"}
         onClick={() => setMenuOpen((open) => !open)}
       >
         <span className="menu-toggle-label">{menuOpen ? "Close" : "Menu"}</span>
