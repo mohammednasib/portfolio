@@ -13,34 +13,20 @@ import {
 } from "./pages/Pages.jsx";
 
 function ScrollToRouteStart() {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-    document.documentElement.classList.remove("reveal-ready");
-    const elements = Array.from(document.querySelectorAll(".reveal"));
-    if (!("IntersectionObserver" in window)) {
-      elements.forEach((element) => element.classList.add("is-visible"));
-      return;
+    if (hash) {
+      const target = document.getElementById(decodeURIComponent(hash.slice(1)));
+      if (target) {
+        const timer = window.setTimeout(() => target.scrollIntoView(), 60);
+        return () => window.clearTimeout(timer);
+      }
     }
-    const frame = window.requestAnimationFrame(() => {
-      document.documentElement.classList.add("reveal-ready");
-      elements.forEach((element) => {
-        if (element.getBoundingClientRect().top < window.innerHeight * 0.92) {
-          element.classList.add("is-visible");
-        }
-      });
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
-      elements.forEach((element) => observer.observe(element));
-    });
-    return () => window.cancelAnimationFrame(frame);
+    window.scrollTo(0, 0);
+    return undefined;
+    // Only route changes should reset scroll; in-page anchors scroll natively.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname]);
 
   return null;

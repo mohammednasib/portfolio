@@ -4,14 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    <meta name="theme-color" content="#f5f7fa">
+    <meta name="theme-color" content="#f3efe7">
+    <meta name="color-scheme" content="light dark">
     <meta name="description" content="Mohammed Nasib K N is a software developer at Blaze Technology Solutions in Doha, Qatar, working across .NET, React, APIs, and insurance-domain systems.">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Mohammed Nasib K N">
     <meta property="og:title" content="Mohammed Nasib K N — Software Developer">
     <meta property="og:description" content="Mohammed Nasib K N is a software developer at Blaze Technology Solutions in Doha, Qatar, working across .NET, React, APIs, and insurance-domain systems.">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Mohammed Nasib K N — Software Developer">
     <meta name="twitter:description" content="Mohammed Nasib K N is a software developer at Blaze Technology Solutions in Doha, Qatar, working across .NET, React, APIs, and insurance-domain systems.">
     <title>Mohammed Nasib K N — Software Developer</title>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Mohammed Nasib K N",
+        "jobTitle": "Software Developer",
+        "worksFor": { "@type": "Organization", "name": "Blaze Technology Solutions" },
+        "address": { "@type": "PostalAddress", "addressLocality": "Doha", "addressCountry": "QA" },
+        "email": "mailto:mohammednasib124@gmail.com",
+        "sameAs": [
+          "https://github.com/mohammednasib",
+          "https://www.linkedin.com/in/mohammed-nasib-k-n"
+        ]
+      }
+    </script>
     <script>
       (() => {
         const root = document.documentElement;
@@ -22,7 +40,7 @@
           root.style.colorScheme = theme;
           document.querySelector('meta[name="theme-color"]')?.setAttribute(
             "content",
-            theme === "dark" ? "#101a28" : "#f5f7fa",
+            theme === "dark" ? "#0d1016" : "#f3efe7",
           );
         } catch {
           root.dataset.theme = "light";
